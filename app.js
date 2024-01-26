@@ -15,8 +15,10 @@ db.once('open', function () {
 });
 
 mongoose.connect(
-    'mongodb+srv://bkantwi:0r5A6PpZComH2ZG5@cluster0.79szhc1.mongodb.net/?retryWrites=true&w=majority'
+    'mongodb+srv://bkantwi:' + process.env.MONGO_ATLAS_PW + '@cluster0.79szhc1.mongodb.net/?retryWrites=true&w=majority'
   );
+
+  mongoose.Promise = global.Promise
   
 
 // hot reload without manually restarting server
