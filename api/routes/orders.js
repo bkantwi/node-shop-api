@@ -51,7 +51,7 @@ router.post('/', (req, res, next) => {
     order
     .save()
     .then(result => {
-        console.log(result);
+        console.log(result); 
         res.status(201).json({
             message: 'Order stored',
             createOrder: {
@@ -61,6 +61,7 @@ router.post('/', (req, res, next) => {
             },
             request: {
                 type: 'GET',
+                description: '',
                 url: 'http://localhost:3001/orders/' + result._id
             }
         });
