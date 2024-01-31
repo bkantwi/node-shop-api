@@ -24,6 +24,9 @@ mongoose.connect(
 // hot reload without manually restarting server
 app.use(morgan('dev'));
 
+// Make the uploads folder public for files
+app.use('/uploads', express.static('uploads'));
+
 // body parser for url encoded data and json data
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
