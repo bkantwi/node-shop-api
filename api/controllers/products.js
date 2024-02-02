@@ -1,5 +1,6 @@
 const Product = require('../models/product'); 
 const mongoose = require('mongoose');
+const { json } = require('body-parser');
 
 exports.get_products = (req, res, next) => {
     Product.find()
